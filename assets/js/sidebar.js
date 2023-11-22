@@ -1,6 +1,6 @@
 'use strict';
 
-import { api_key, fetchDataFromSever } from './api';
+import { api_key, fetchDataFromSever } from './api.js';
 
 export function sidebar() {
   const genreList = {};
@@ -41,15 +41,13 @@ export function sidebar() {
     for (const [genreId, genreName] of Object.entries(genreList)) {
       const link = document.createElement('a');
       link.classList.add('sidebar-link');
-      link.setAttribute('href', '.movie-list.html');
+      link.setAttribute('href', './movie-list.html');
       link.setAttribute('menu-close', '');
       // link.setAttribute('onclick', `getMovieList('with_genres=${genreId}', '${genreName}')`);
 
       link.textContent = genreName;
 
-      sidebarInner.querySelectorAll('.sidebar-list')[0];
-
-      appendChild(link);
+      sidebarInner.querySelectorAll('.sidebar-list')[0].appendChild(link);
     }
 
     const sidebar = document.querySelector('[sidebar]');
@@ -68,7 +66,7 @@ export function sidebar() {
       sidebarBtn.classList.toggle('active');
       overlay.classList.toggle('active');
     });
-    addEventOnElements(sidebarTogglers, 'click', function () {
+    addEventOnElements(sidebarClose, 'click', function () {
       sidebar.classList.remove('active');
       sidebarBtn.classList.remove('active');
       overlay.classList.remove('active');

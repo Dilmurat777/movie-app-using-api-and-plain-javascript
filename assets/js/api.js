@@ -11,5 +11,3 @@ const fetchDataFromSever = function (url, callback, optionalParam) {
 
 
 export {imageBaseURL, api_key, fetchDataFromSever}
-
-console.log('Test')
