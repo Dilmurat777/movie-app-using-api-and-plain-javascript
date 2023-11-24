@@ -13,14 +13,15 @@ addEventOnElements(searchTogglers, 'click', function() {
 	searchBox.classList.toggle('active')
 })
 
-// const api_key = 'c08a5b544a250b00781a187cb551af8f';
-// const imageBaseURL = 'https://image.tmdb.org/t/p/';
+//store movieId in 'localStorage'
 
-// function fetchDataFromSever() {
-//   fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=c08a5b544a250b00781a187cb551af8f`)
-// 	.then(response => response.json())
-//   .then(response => console.log(response))
-//   .catch(err => console.error(err));
-// };
 
-// fetchDataFromSever()
+const getMovieDetail = function(movieId) {
+	window.localStorage.setItem('movieId', String(movieId));
+}
+
+
+const  getMovieList = function (urlParam, genreName) {
+	window.localStorage.setItem('urlParam', urlParam);
+	window.localStorage.setItem('genreName', genreName);
+}
